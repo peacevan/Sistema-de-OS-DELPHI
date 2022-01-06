@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="source"/>
+    <File Path="source\unit_clients.pas"/>
+    <File Path="source\unit_clients.dfm"/>
+    <File Path="source\unit_data_module.pas"/>
+    <File Path="source\unit_data_module.dfm"/>
+    <File Path="source\unit_main.pas"/>
+    <File Path="source\unit_main.dfm"/>
+    <File Path="source\unit_ordem_servico.pas"/>
+    <File Path="source\unit_ordem_servico.dfm"/>
+    <File Path="source\Unit_cliets_pesquisa.pas"/>
+    <File Path="source\Unit_cliets_pesquisa.dfm"/>
+  </ProjectSortOrder>
+	<Transactions>
+    <Transaction>2020/03/18 03:07:00.000.949,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.pas=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.pas</Transaction>
+    <Transaction>2020/03/18 03:07:00.000.949,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.dfm=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.dfm</Transaction>
+    <Transaction>2020/03/18 03:20:22.000.622,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.dfm=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.dfm</Transaction>
+    <Transaction>2020/03/18 03:20:22.000.637,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.pas=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.pas</Transaction>
+    <Transaction>2020/03/18 03:20:22.000.622,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.pas=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.pas</Transaction>
+    <Transaction>2020/03/18 03:20:22.000.637,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_ordem_servico.dfm=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.dfm</Transaction>
+    <Transaction>2020/03/18 03:24:23.000.819,=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\unit_clients.pas</Transaction>
+    <Transaction>2020/03/30 02:17:13.000.761,=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\Unit1.pas</Transaction>
+    <Transaction>2020/03/30 02:21:06.000.588,=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\Unit1.pas</Transaction>
+    <Transaction>2020/03/30 02:23:10.000.391,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\Unit_cliets_pesquisa.pas=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\Unit1.pas</Transaction>
+    <Transaction>2020/03/30 02:23:10.000.391,F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\source\Unit_cliets_pesquisa.dfm=F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento-de-Clientes-com-Delphi-e-MySQL-master\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

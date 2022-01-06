@@ -1,0 +1,60 @@
+object frm_name: Tfrm_name
+  Left = 108
+  Top = 10
+  Width = 773
+  Height = 554
+  Caption = 'Sistema de Gerenciamento de Clientes'
+  Color = cl3DLight
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = main_menu
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 0
+    Top = 0
+    Width = 765
+    Height = 479
+    Align = alClient
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 479
+    Width = 765
+    Height = 24
+    Panels = <
+      item
+        Alignment = taCenter
+        Width = 50
+      end>
+  end
+  object main_menu: TMainMenu
+    Left = 16
+    Top = 8
+    object Arquivo1: TMenuItem
+      Caption = 'Arquivo'
+      object fechar2: TMenuItem
+        Caption = 'Sair'
+        OnClick = fechar2Click
+      end
+    end
+    object Cadastros1: TMenuItem
+      Caption = 'Cadastro'
+      object Clientes1: TMenuItem
+        Caption = 'Cliente'
+        OnClick = Clientes1Click
+      end
+    end
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 64
+    Top = 8
+  end
+end

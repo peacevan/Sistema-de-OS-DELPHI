@@ -1,0 +1,2366 @@
+object frm_data_module: Tfrm_data_module
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 400
+  Width = 504
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=sistema-gerencia-clientes'
+      'User_Name=root'
+      'DriverID=MySQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 8
+  end
+  object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
+    VendorLib = 
+      'F:\ARQUIVOS 2020\DESENVOLVIMENTO\DELPHI\Sistema-de-Gerenciamento' +
+      '-de-Clientes-com-Delphi-e-MySQL-master\lib\libmySQL.dll'
+    Left = 136
+    Top = 8
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 256
+    Top = 8
+  end
+  object tbl_clients: TFDTable
+    IndexFieldNames = 'cliente_id'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = '`sistema-gerencia-clientes`.clientes'
+    TableName = '`sistema-gerencia-clientes`.clientes'
+    Left = 336
+    Top = 8
+    object tbl_clientscliente_id: TFDAutoIncField
+      FieldName = 'cliente_id'
+      Origin = 'cliente_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object tbl_clientscliente_nome: TStringField
+      FieldName = 'cliente_nome'
+      Origin = 'cliente_nome'
+      Required = True
+      Size = 75
+    end
+    object tbl_clientscliente_rg: TStringField
+      FieldName = 'cliente_rg'
+      Origin = 'cliente_rg'
+      Required = True
+      EditMask = '0000000000;0;_'
+      Size = 15
+    end
+    object tbl_clientscliente_cpf: TStringField
+      FieldName = 'cliente_cpf'
+      Origin = 'cliente_cpf'
+      Required = True
+      EditMask = '000\.000\.000\-00;0;_'
+      Size = 15
+    end
+    object tbl_clientscliente_data_nasc: TDateField
+      FieldName = 'cliente_data_nasc'
+      Origin = 'cliente_data_nasc'
+      Required = True
+      EditMask = '!99/99/0000;1;_'
+    end
+    object tbl_clientscliente_data_cad: TDateField
+      FieldName = 'cliente_data_cad'
+      Origin = 'cliente_data_cad'
+      Required = True
+    end
+    object tbl_clientscliente_endereco: TStringField
+      FieldName = 'cliente_endereco'
+      Origin = 'cliente_endereco'
+      Required = True
+      Size = 100
+    end
+    object tbl_clientscliente_num_residencia: TStringField
+      FieldName = 'cliente_num_residencia'
+      Origin = 'cliente_num_residencia'
+      Required = True
+      Size = 10
+    end
+    object tbl_clientscliente_cep: TStringField
+      FieldName = 'cliente_cep'
+      Origin = 'cliente_cep'
+      Required = True
+      EditMask = '00000\-999;0;_'
+    end
+    object tbl_clientscliente_bairro: TStringField
+      FieldName = 'cliente_bairro'
+      Origin = 'cliente_bairro'
+      Required = True
+      Size = 100
+    end
+    object tbl_clientscliente_cidade: TStringField
+      FieldName = 'cliente_cidade'
+      Origin = 'cliente_cidade'
+      Required = True
+      Size = 100
+    end
+    object tbl_clientscliente_estado: TStringField
+      FieldName = 'cliente_estado'
+      Origin = 'cliente_estado'
+      Required = True
+      Size = 30
+    end
+    object tbl_clientscliente_telefone: TStringField
+      FieldName = 'cliente_telefone'
+      Origin = 'cliente_telefone'
+      Required = True
+      EditMask = '!\(99\) 0000\-0000;0;_'
+      Size = 15
+    end
+    object tbl_clientscliente_celular: TStringField
+      FieldName = 'cliente_celular'
+      Origin = 'cliente_celular'
+      Required = True
+      EditMask = '!\(99\) 00000\-0000;0;_'
+      Size = 15
+    end
+    object tbl_clientscliente_email: TStringField
+      FieldName = 'cliente_email'
+      Origin = 'cliente_email'
+      Required = True
+      Size = 100
+    end
+    object tbl_clientscliente_situacao: TStringField
+      FieldName = 'cliente_situacao'
+      Origin = 'cliente_situacao'
+      Required = True
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = tbl_clients
+    Left = 400
+    Top = 8
+  end
+  object sql_query_clients: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from clientes')
+    Left = 136
+    Top = 112
+    object sql_query_clientscliente_id: TFDAutoIncField
+      FieldName = 'cliente_id'
+      Origin = 'cliente_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object sql_query_clientscliente_nome: TStringField
+      FieldName = 'cliente_nome'
+      Origin = 'cliente_nome'
+      Required = True
+      Size = 75
+    end
+    object sql_query_clientscliente_endereco: TStringField
+      FieldName = 'cliente_endereco'
+      Origin = 'cliente_endereco'
+      Required = True
+      Size = 100
+    end
+    object sql_query_clientscliente_num_residencia: TStringField
+      FieldName = 'cliente_num_residencia'
+      Origin = 'cliente_num_residencia'
+      Required = True
+      Size = 10
+    end
+    object sql_query_clientscliente_cep: TStringField
+      FieldName = 'cliente_cep'
+      Origin = 'cliente_cep'
+      Required = True
+    end
+    object sql_query_clientscliente_bairro: TStringField
+      FieldName = 'cliente_bairro'
+      Origin = 'cliente_bairro'
+      Required = True
+      Size = 100
+    end
+    object sql_query_clientscliente_cidade: TStringField
+      FieldName = 'cliente_cidade'
+      Origin = 'cliente_cidade'
+      Required = True
+      Size = 100
+    end
+    object sql_query_clientscliente_estado: TStringField
+      FieldName = 'cliente_estado'
+      Origin = 'cliente_estado'
+      Required = True
+      Size = 30
+    end
+    object sql_query_clientscliente_rg: TStringField
+      FieldName = 'cliente_rg'
+      Origin = 'cliente_rg'
+      Required = True
+      Size = 15
+    end
+    object sql_query_clientscliente_cpf: TStringField
+      FieldName = 'cliente_cpf'
+      Origin = 'cliente_cpf'
+      Required = True
+      Size = 15
+    end
+    object sql_query_clientscliente_telefone: TStringField
+      FieldName = 'cliente_telefone'
+      Origin = 'cliente_telefone'
+      Required = True
+      Size = 15
+    end
+    object sql_query_clientscliente_celular: TStringField
+      FieldName = 'cliente_celular'
+      Origin = 'cliente_celular'
+      Required = True
+      Size = 15
+    end
+    object sql_query_clientscliente_email: TStringField
+      FieldName = 'cliente_email'
+      Origin = 'cliente_email'
+      Required = True
+      Size = 100
+    end
+    object sql_query_clientscliente_data_nasc: TDateField
+      FieldName = 'cliente_data_nasc'
+      Origin = 'cliente_data_nasc'
+      Required = True
+    end
+    object sql_query_clientscliente_data_cad: TDateField
+      FieldName = 'cliente_data_cad'
+      Origin = 'cliente_data_cad'
+      Required = True
+    end
+    object sql_query_clientscliente_situacao: TStringField
+      FieldName = 'cliente_situacao'
+      Origin = 'cliente_situacao'
+      Required = True
+    end
+  end
+  object data_source_query_clients: TDataSource
+    DataSet = sql_query_clients
+    Left = 256
+    Top = 112
+  end
+  object sql_print_clients: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      ''
+      'select * from clientes')
+    Left = 120
+    Top = 200
+    object sql_print_clientscliente_id: TFDAutoIncField
+      FieldName = 'cliente_id'
+      Origin = 'cliente_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object sql_print_clientscliente_nome: TStringField
+      FieldName = 'cliente_nome'
+      Origin = 'cliente_nome'
+      Required = True
+      Size = 75
+    end
+    object sql_print_clientscliente_endereco: TStringField
+      FieldName = 'cliente_endereco'
+      Origin = 'cliente_endereco'
+      Required = True
+      Size = 50
+    end
+    object sql_print_clientscliente_num_residencia: TStringField
+      FieldName = 'cliente_num_residencia'
+      Origin = 'cliente_num_residencia'
+      Required = True
+      Size = 8
+    end
+    object sql_print_clientscliente_cep: TStringField
+      FieldName = 'cliente_cep'
+      Origin = 'cliente_cep'
+      Required = True
+      Size = 8
+    end
+    object sql_print_clientscliente_bairro: TStringField
+      FieldName = 'cliente_bairro'
+      Origin = 'cliente_bairro'
+      Required = True
+      Size = 45
+    end
+    object sql_print_clientscliente_cidade: TStringField
+      FieldName = 'cliente_cidade'
+      Origin = 'cliente_cidade'
+      Required = True
+      Size = 50
+    end
+    object sql_print_clientscliente_estado: TStringField
+      FieldName = 'cliente_estado'
+      Origin = 'cliente_estado'
+      Required = True
+      Size = 30
+    end
+    object sql_print_clientscliente_rg: TStringField
+      FieldName = 'cliente_rg'
+      Origin = 'cliente_rg'
+      Required = True
+      Size = 11
+    end
+    object sql_print_clientscliente_cpf: TStringField
+      FieldName = 'cliente_cpf'
+      Origin = 'cliente_cpf'
+      Required = True
+      Size = 15
+    end
+    object sql_print_clientscliente_telefone: TStringField
+      FieldName = 'cliente_telefone'
+      Origin = 'cliente_telefone'
+      Required = True
+      Size = 15
+    end
+    object sql_print_clientscliente_celular: TStringField
+      FieldName = 'cliente_celular'
+      Origin = 'cliente_celular'
+      Required = True
+      Size = 10
+    end
+    object sql_print_clientscliente_email: TStringField
+      FieldName = 'cliente_email'
+      Origin = 'cliente_email'
+      Required = True
+      Size = 45
+    end
+    object sql_print_clientscliente_data_nasc: TDateField
+      FieldName = 'cliente_data_nasc'
+      Origin = 'cliente_data_nasc'
+      Required = True
+    end
+    object sql_print_clientscliente_data_cad: TDateField
+      FieldName = 'cliente_data_cad'
+      Origin = 'cliente_data_cad'
+      Required = True
+    end
+    object sql_print_clientscliente_situacao: TStringField
+      FieldName = 'cliente_situacao'
+      Origin = 'cliente_situacao'
+      Required = True
+      Size = 8
+    end
+  end
+  object report_client: TfrxReport
+    Version = '6.5'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43311.707672256900000000
+    ReportOptions.LastChange = 43321.557124664350000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 208
+    Top = 200
+    Datasets = <
+      item
+        DataSet = data_set_report_client
+        DataSetName = 'data_set_report_client'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 94.102350000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 226.771800000000000000
+          Top = 18.897650000000000000
+          Width = 264.567100000000000000
+          Height = 37.795300000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Color = clNone
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Relat'#243'rio de Cliente')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 226.771800000000000000
+          Top = 56.692950000000000000
+          Width = 264.567100000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Sistema de Cadastro de Clientes')
+          ParentFont = False
+        end
+        object Memo19: TfrxMemoView
+          AllowVectorExport = True
+          Left = 566.929500000000000000
+          Width = 151.181200000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 13421772
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'jamesschulzm.github.io')
+          ParentFont = False
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 262.228510000000000000
+        Top = 173.858380000000000000
+        Width = 718.110700000000000000
+        DataSet = data_set_report_client
+        DataSetName = 'data_set_report_client'
+        RowCount = 0
+        object data_set_report_clientcliente_id: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 109.606370000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_data_nasc'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_data_nasc"]')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 15.118120000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'C'#243'digo:')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_nome: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 52.913420000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_nome'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_nome"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_rg: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 71.811070000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_rg'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_rg"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_cpf: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 90.708720000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_cpf"]')
+          ParentFont = False
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 52.913420000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'NOME:')
+          ParentFont = False
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 71.811070000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'RG:')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_celular: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 128.504020000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_celular'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_celular"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_telefone: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 147.401670000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_telefone'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_telefone"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_email: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 166.299320000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_email'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_email"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_endereco: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 52.913420000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_endereco'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_endereco"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_num_residencia: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 71.811070000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_num_residencia'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_num_residencia"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_cep: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 90.708720000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_cep'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_cep"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_bairro: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 109.606370000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_bairro'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_bairro"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_cidade: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 128.504020000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_cidade'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_cidade"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_estado: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 147.401670000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_estado'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_estado"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_data_cad: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 215.433210000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_data_cad'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_data_cad"]')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_situacao: TfrxMemoView
+          AllowVectorExport = True
+          Left = 491.338900000000000000
+          Top = 215.433210000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_situacao'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_situacao"]')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 90.708720000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'CPF:')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 128.504020000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'CELULAR')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 147.401670000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'TELEFONE:')
+          ParentFont = False
+        end
+        object Memo9: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 166.299320000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'E-MAIL:')
+          ParentFont = False
+        end
+        object data_set_report_clientcliente_id1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 94.488250000000000000
+          Top = 15.118120000000000000
+          Width = 585.827150000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_id'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_id"]')
+          ParentFont = False
+        end
+        object Memo10: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 52.913420000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'ENDERE'#199'O:')
+          ParentFont = False
+        end
+        object Memo11: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 71.811070000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'N'#186':')
+          ParentFont = False
+        end
+        object Memo12: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 90.708720000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'CEP:')
+          ParentFont = False
+        end
+        object Memo13: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 109.606370000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'BAIRRO:')
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 128.504020000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'CIDADE')
+          ParentFont = False
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 147.401670000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'ESTADO:')
+          ParentFont = False
+        end
+        object Memo16: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 109.606370000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'DATA NASC.:')
+          ParentFont = False
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Left = 359.055350000000000000
+          Top = 34.015770000000000000
+          Height = 170.078850000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 34.015770000000000000
+          Height = 170.078850000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line3: TfrxLineView
+          AllowVectorExport = True
+          Left = 680.315400000000000000
+          Top = 34.015770000000000000
+          Height = 170.078850000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Memo17: TfrxMemoView
+          AllowVectorExport = True
+          Left = 56.692950000000000000
+          Top = 215.433210000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'DATA CAD.:')
+          ParentFont = False
+        end
+        object Memo18: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 215.433210000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'SITUA'#199#195'O:')
+          ParentFont = False
+        end
+        object Line6: TfrxLineView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 204.094620000000000000
+          Height = 37.795300000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line8: TfrxLineView
+          AllowVectorExport = True
+          Left = 680.315400000000000000
+          Top = 204.094620000000000000
+          Height = 37.795300000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line4: TfrxLineView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 241.889920000000000000
+          Width = 642.520100000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line7: TfrxLineView
+          AllowVectorExport = True
+          Left = 680.315400000000000000
+          Top = 204.094620000000000000
+          Width = -642.520100000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+        object Line5: TfrxLineView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 34.015770000000000000
+          Width = 642.520100000000000000
+          Color = clBlack
+          Frame.Typ = []
+          Diagonal = True
+        end
+      end
+    end
+  end
+  object data_set_report_client: TfrxDBDataset
+    UserName = 'data_set_report_client'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'cliente_id=cliente_id'
+      'cliente_nome=cliente_nome'
+      'cliente_endereco=cliente_endereco'
+      'cliente_num_residencia=cliente_num_residencia'
+      'cliente_cep=cliente_cep'
+      'cliente_bairro=cliente_bairro'
+      'cliente_cidade=cliente_cidade'
+      'cliente_estado=cliente_estado'
+      'cliente_rg=cliente_rg'
+      'cliente_cpf=cliente_cpf'
+      'cliente_telefone=cliente_telefone'
+      'cliente_celular=cliente_celular'
+      'cliente_email=cliente_email'
+      'cliente_data_nasc=cliente_data_nasc'
+      'cliente_data_cad=cliente_data_cad'
+      'cliente_situacao=cliente_situacao')
+    DataSet = sql_print_clients
+    BCDToCurrency = False
+    Left = 296
+    Top = 200
+  end
+  object tbl_OS: TFDTable
+    IndexFieldNames = 'ordem_servico_id'
+    Connection = FDConnection1
+    UpdateOptions.UpdateTableName = '`sistema-gerencia-clientes`.ordem_servico'
+    TableName = '`sistema-gerencia-clientes`.ordem_servico'
+    Left = 352
+    Top = 296
+    object tbl_OSordem_servico_id: TFDAutoIncField
+      FieldName = 'ordem_servico_id'
+      Origin = 'ordem_servico_id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object tbl_OSuser: TIntegerField
+      FieldName = 'user'
+      Origin = '`user`'
+      Required = True
+    end
+    object tbl_OScliente: TIntegerField
+      FieldName = 'cliente'
+      Origin = 'cliente'
+      Required = True
+    end
+    object tbl_OStitulo: TStringField
+      FieldName = 'titulo'
+      Origin = 'titulo'
+      Required = True
+      Size = 45
+    end
+    object tbl_OSdescricao: TStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Required = True
+      Size = 255
+    end
+    object tbl_OSprob_relatado: TStringField
+      FieldName = 'prob_relatado'
+      Origin = 'prob_relatado'
+      Required = True
+      Size = 255
+    end
+    object tbl_OSprob_constatado: TStringField
+      FieldName = 'prob_constatado'
+      Origin = 'prob_constatado'
+      Required = True
+      Size = 255
+    end
+    object tbl_OSservico_produto: TIntegerField
+      FieldName = 'servico_produto'
+      Origin = 'servico_produto'
+      Required = True
+    end
+    object tbl_OSdata_disponibilidade: TStringField
+      FieldName = 'data_disponibilidade'
+      Origin = 'data_disponibilidade'
+      Required = True
+      Size = 50
+    end
+    object tbl_OSdata_hora: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'data_hora'
+      Origin = 'data_hora'
+      Size = 50
+    end
+    object tbl_OSimagem: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'imagem'
+      Origin = 'imagem'
+      Size = 50
+    end
+    object tbl_OStelefone_contato: TStringField
+      FieldName = 'telefone_contato'
+      Origin = 'telefone_contato'
+      Required = True
+      Size = 50
+    end
+    object tbl_OScodigo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      Size = 50
+    end
+    object tbl_OSserie: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'serie'
+      Origin = 'serie'
+      Size = 50
+    end
+    object tbl_OSpatrimonio: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'patrimonio'
+      Origin = 'patrimonio'
+      Size = 50
+    end
+    object tbl_OScor: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'cor'
+      Origin = 'cor'
+      Size = 50
+    end
+    object tbl_OSmodelo: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'modelo'
+      Origin = 'modelo'
+      Size = 50
+    end
+    object tbl_OSmarca: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'marca'
+      Origin = 'marca'
+      Size = 50
+    end
+    object tbl_OSstatus: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'status'
+      Origin = '`status`'
+      Size = 50
+    end
+    object tbl_OSacessorios: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'acessorios'
+      Origin = 'acessorios'
+      Size = 50
+    end
+    object tbl_OSsituacao: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'situacao'
+      Origin = 'situacao'
+      Size = 10
+    end
+    object tbl_OSobservacao: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'observacao'
+      Origin = 'observacao'
+      Size = 50
+    end
+    object tbl_OStotal: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'total'
+      Origin = 'total'
+      Size = 50
+    end
+  end
+  object DataSource_OS: TDataSource
+    DataSet = tbl_OS
+    Left = 416
+    Top = 296
+  end
+  object sql_print_os: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from ordem_servico')
+    Left = 64
+    Top = 304
+    object sql_print_osordem_servico_id: TFDAutoIncField
+      FieldName = 'ordem_servico_id'
+    end
+    object sql_print_osservico_produto_id: TIntegerField
+      FieldName = 'servico_produto_id'
+      Required = True
+    end
+    object sql_print_osuser_id: TIntegerField
+      FieldName = 'user_id'
+    end
+    object sql_print_oscliente_id: TIntegerField
+      FieldName = 'cliente_id'
+    end
+    object sql_print_ostitulo: TStringField
+      FieldName = 'titulo'
+      Size = 45
+    end
+    object sql_print_osdescricao_servico: TStringField
+      FieldName = 'descricao_servico'
+      Size = 255
+    end
+    object sql_print_osprob_relatado: TStringField
+      FieldName = 'prob_relatado'
+      Size = 255
+    end
+    object sql_print_osprob_constatado: TStringField
+      FieldName = 'prob_constatado'
+      Size = 255
+    end
+    object sql_print_osdata_disponibilidade: TStringField
+      FieldName = 'data_disponibilidade'
+      Size = 50
+    end
+    object sql_print_osimagem: TStringField
+      FieldName = 'imagem'
+      Size = 50
+    end
+    object sql_print_osdata_hora: TStringField
+      FieldName = 'data_hora'
+      Size = 50
+    end
+    object sql_print_ostelefone_contato: TStringField
+      FieldName = 'telefone_contato'
+      Size = 50
+    end
+    object sql_print_oscodigo: TStringField
+      FieldName = 'codigo'
+      Size = 50
+    end
+    object sql_print_osserie: TStringField
+      FieldName = 'serie'
+      Size = 50
+    end
+    object sql_print_ospatrimonio: TStringField
+      FieldName = 'patrimonio'
+      Size = 50
+    end
+    object sql_print_oscor: TStringField
+      FieldName = 'cor'
+      Size = 50
+    end
+    object sql_print_osmodelo: TStringField
+      FieldName = 'modelo'
+      Size = 50
+    end
+    object sql_print_osmarca: TStringField
+      FieldName = 'marca'
+      Size = 50
+    end
+    object sql_print_osstatus: TStringField
+      FieldName = 'status'
+      Size = 50
+    end
+    object sql_print_osacessorios: TStringField
+      FieldName = 'acessorios'
+      Size = 50
+    end
+    object sql_print_ossituacao: TStringField
+      FieldName = 'situacao'
+      Size = 10
+    end
+    object sql_print_osobservacao: TStringField
+      FieldName = 'observacao'
+      Size = 50
+    end
+    object sql_print_ostotal_os: TStringField
+      FieldName = 'total_os'
+      Size = 50
+    end
+  end
+  object report_OS: TfrxReport
+    Version = '6.5'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43311.707672256900000000
+    ReportOptions.LastChange = 43911.215331018520000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 152
+    Top = 312
+    Datasets = <
+      item
+        DataSet = data_set_report_client
+        DataSetName = 'data_set_report_client'
+      end
+      item
+        DataSet = data_set_report_os
+        DataSetName = 'data_set_report_os'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 332.598640000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        AllowSplit = True
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 219.212740000000000000
+          Top = 124.724490000000000000
+          Width = 287.244280000000000000
+          Height = 37.795300000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Color = clNone
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Ordem de Servi'#231'o N'#186'.: ')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 222.992125980000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Cliente')
+          ParentFont = False
+        end
+        object Memo19: TfrxMemoView
+          AllowVectorExport = True
+          Left = 566.929500000000000000
+          Width = 151.181200000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 13421772
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'OS')
+          ParentFont = False
+        end
+        object Memo22: TfrxMemoView
+          AllowVectorExport = True
+          Left = 226.771800000000000000
+          Top = 15.118120000000000000
+          Width = 453.543600000000000000
+          Height = 98.267780000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Insc Estadual: XXXXXXXXXX                CNPJ: XXXXXXXXXXXXXXXXX'
+            'Rua  das Ortencia   N'#186'. 123-B  Cabula'
+            '41100-420 -SALVADOR-BA'
+            'Fone(71)9875-0000'
+            'email@email.com')
+        end
+        object Memo20: TfrxMemoView
+          AllowVectorExport = True
+          Left = 79.370130000000000000
+          Top = 166.299320000000000000
+          Width = 631.181510000000000000
+          Height = 56.692950000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              'N'#227'o  '#233' documento fiscal, N'#227'o '#233' v'#225'lido como recibo e como garanti' +
+              'a de mercadoria'
+            
+              '     N'#227'o comprova pagamento '#233' vedada a autentica'#231#227'o desse docume' +
+              'nto.')
+          ParentFont = False
+        end
+        object Memo23: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 241.889763780000000000
+          Width = 71.811070000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Endereco')
+          ParentFont = False
+        end
+        object Memo24: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 260.787401570000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Bairro')
+          ParentFont = False
+        end
+        object Memo25: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 283.464566930000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Cidade')
+          ParentFont = False
+        end
+        object Memo26: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118120000000000000
+          Top = 306.141930000000000000
+          Width = 71.811070000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Atendente')
+          ParentFont = False
+        end
+        object Memo27: TfrxMemoView
+          AllowVectorExport = True
+          Left = 366.614173228346000000
+          Top = 222.992125980000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'CPF/CNPJ')
+          ParentFont = False
+        end
+        object Memo28: TfrxMemoView
+          AllowVectorExport = True
+          Left = 551.811380000000000000
+          Top = 222.992125980000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'IE/RG')
+          ParentFont = False
+        end
+        object Memo29: TfrxMemoView
+          AllowVectorExport = True
+          Left = 366.614173228346000000
+          Top = 260.787401570000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Contato')
+          ParentFont = False
+        end
+        object Memo30: TfrxMemoView
+          AllowVectorExport = True
+          Left = 366.614173228346000000
+          Top = 283.464750000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Fone')
+          ParentFont = False
+        end
+        object Memo31: TfrxMemoView
+          AllowVectorExport = True
+          Left = 551.811380000000000000
+          Top = 283.464566930000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Celular')
+          ParentFont = False
+        end
+        object Memo32: TfrxMemoView
+          AllowVectorExport = True
+          Left = 366.614410000000000000
+          Top = 306.141930000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Data/Hora')
+          ParentFont = False
+        end
+        object Memo33: TfrxMemoView
+          AllowVectorExport = True
+          Left = 555.590910000000000000
+          Top = 306.141930000000000000
+          Width = 52.913420000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Status')
+          ParentFont = False
+        end
+        object Memo35: TfrxMemoView
+          AllowVectorExport = True
+          Left = 117.165430000000000000
+          Top = 222.992125980000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_nome'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_nome"]')
+          ParentFont = False
+        end
+        object Memo41: TfrxMemoView
+          AllowVectorExport = True
+          Left = 438.425480000000000000
+          Top = 222.992125980000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_cpf'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_cpf"]')
+          ParentFont = False
+        end
+        object Memo42: TfrxMemoView
+          AllowVectorExport = True
+          Left = 612.283860000000000000
+          Top = 222.992125980000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_rg'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_rg"]')
+          ParentFont = False
+        end
+        object Memo43: TfrxMemoView
+          AllowVectorExport = True
+          Left = 117.165430000000000000
+          Top = 241.889763780000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_endereco'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_endereco"]')
+          ParentFont = False
+        end
+        object Memo44: TfrxMemoView
+          AllowVectorExport = True
+          Left = 117.165430000000000000
+          Top = 260.787401570000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_bairro'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_bairro"]')
+          ParentFont = False
+        end
+        object Memo45: TfrxMemoView
+          AllowVectorExport = True
+          Left = 117.165430000000000000
+          Top = 283.464566930000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_cidade'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_cidade"]')
+          ParentFont = False
+        end
+        object Memo46: TfrxMemoView
+          AllowVectorExport = True
+          Left = 438.425480000000000000
+          Top = 260.787401570000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_email'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_email"]')
+          ParentFont = False
+        end
+        object Memo47: TfrxMemoView
+          AllowVectorExport = True
+          Left = 438.425480000000000000
+          Top = 283.464566930000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_telefone'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_telefone"]')
+          ParentFont = False
+        end
+        object Memo48: TfrxMemoView
+          AllowVectorExport = True
+          Left = 616.063390000000000000
+          Top = 283.464566930000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'cliente_celular'
+          DataSet = data_set_report_client
+          DataSetName = 'data_set_report_client'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_client."cliente_celular"]')
+          ParentFont = False
+        end
+        object Memo54: TfrxMemoView
+          AllowVectorExport = True
+          Left = 510.236550000000000000
+          Top = 124.724490000000000000
+          Width = 215.433210000000000000
+          Height = 37.795300000000000000
+          DataField = 'codigo'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Color = clNone
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."codigo"]')
+          ParentFont = False
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Top = 325.039291970000000000
+          Width = 714.331170000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 396.850650000000000000
+        Top = 411.968770000000000000
+        Width = 718.110700000000000000
+        DataSet = data_set_report_os
+        DataSetName = 'data_set_report_os'
+        RowCount = 1
+        object Shape3: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779527560000000000
+          Top = 258.645330000000000000
+          Width = 710.551181100000000000
+          Height = 64.252010000000000000
+          Frame.Typ = []
+        end
+        object Shape2: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779527560000000000
+          Top = 234.330860000000000000
+          Width = 710.551181100000000000
+          Height = 26.456710000000000000
+          Fill.BackColor = clSilver
+          Frame.Typ = []
+        end
+        object Shape1: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779527560000000000
+          Width = 710.551640000000000000
+          Height = 222.992270000000000000
+          Frame.Typ = []
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 11.338590000000000000
+          Top = 30.236240000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'C'#243'digo')
+          ParentFont = False
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 151.181200000000000000
+          Top = 30.236240000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'S'#233'rie')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 544.252320000000000000
+          Top = 30.236240000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Cor')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 18.897650000000000000
+          Top = 109.606370000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Acess'#243'rios:')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          AllowVectorExport = True
+          Left = 18.897650000000000000
+          Top = 136.063080000000000000
+          Width = 139.842610000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Problema Relatados:')
+          ParentFont = False
+        end
+        object Memo9: TfrxMemoView
+          AllowVectorExport = True
+          Left = 18.897650000000000000
+          Top = 158.740260000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Problemas Comstatados:')
+          ParentFont = False
+        end
+        object Memo34: TfrxMemoView
+          AllowVectorExport = True
+          Left = 132.283550000000000000
+          Top = 241.889920000000000000
+          Width = 306.141930000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'OBSERVA'#199#213'ES GERAIS')
+          ParentFont = False
+        end
+        object MemoObs: TfrxMemoView
+          AllowVectorExport = True
+          Left = 15.118117560000000000
+          Top = 272.126160000000000000
+          Width = 665.197280000000000000
+          Height = 30.236240000000000000
+          DataField = 'observacao'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."observacao"]')
+          ParentFont = False
+        end
+        object Shape4: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Width = 710.551181100000000000
+          Height = 26.456710000000000000
+          Fill.BackColor = clSilver
+          Frame.Typ = []
+        end
+        object Memo36: TfrxMemoView
+          AllowVectorExport = True
+          Left = 11.338590000000000000
+          Top = 7.559060000000000000
+          Width = 684.094930000000000000
+          Height = 24.118120000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'REFRIGERADOR BRASTEMP DULPLEX DIGITAR MAS ')
+          ParentFont = False
+        end
+        object Memo37: TfrxMemoView
+          AllowVectorExport = True
+          Left = 377.953000000000000000
+          Top = 30.236240000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Patrim'#244'nio')
+          ParentFont = False
+        end
+        object Line4: TfrxLineView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 52.913420000000000000
+          Width = 710.551640000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object Line5: TfrxLineView
+          AllowVectorExport = True
+          Left = 105.826840000000000000
+          Top = 26.456710000000000000
+          Height = 26.456710000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line6: TfrxLineView
+          AllowVectorExport = True
+          Left = 325.039580000000000000
+          Top = 26.456710000000000000
+          Height = 26.456710000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Line7: TfrxLineView
+          AllowVectorExport = True
+          Left = 536.693260000000000000
+          Top = 26.456710000000000000
+          Height = 26.456710000000000000
+          Color = clBlack
+          Frame.Typ = [ftLeft]
+        end
+        object Shape5: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 52.913420000000000000
+          Width = 710.551181100000000000
+          Height = 26.456710000000000000
+          Frame.Typ = []
+        end
+        object Shape6: TfrxShapeView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 79.370130000000000000
+          Width = 710.551181100000000000
+          Height = 26.456710000000000000
+          Frame.Typ = []
+        end
+        object Memo16: TfrxMemoView
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 83.149660000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Modelo')
+          ParentFont = False
+        end
+        object Memo38: TfrxMemoView
+          AllowVectorExport = True
+          Left = 328.819110000000000000
+          Top = 83.149660000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Marca')
+          ParentFont = False
+        end
+        object Memo39: TfrxMemoView
+          AllowVectorExport = True
+          Left = 18.897650000000000000
+          Top = 181.417440000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Situa'#231#227'o:')
+          ParentFont = False
+        end
+        object Memo49: TfrxMemoView
+          AllowVectorExport = True
+          Left = 105.826840000000000000
+          Top = 181.417440000000000000
+          Width = 79.370130000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Situa'#231#227'o:')
+          ParentFont = False
+        end
+        object Memo50: TfrxMemoView
+          AllowVectorExport = True
+          Left = 204.094620000000000000
+          Top = 158.740260000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'prob_constatado'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."prob_constatado"]')
+          ParentFont = False
+        end
+        object Memo51: TfrxMemoView
+          AllowVectorExport = True
+          Left = 204.094620000000000000
+          Top = 132.283550000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'prob_relatado'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."prob_relatado"]')
+          ParentFont = False
+        end
+        object Memo52: TfrxMemoView
+          AllowVectorExport = True
+          Left = 204.094620000000000000
+          Top = 105.826840000000000000
+          Width = 170.078850000000000000
+          Height = 18.897650000000000000
+          DataField = 'acessorios'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."acessorios"]')
+          ParentFont = False
+        end
+        object Shape8: TfrxShapeView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 355.275820000000000000
+          Width = 207.874150000000000000
+          Height = 26.456710000000000000
+          Fill.BackColor = clWindow
+          Frame.Typ = []
+        end
+        object Memo53: TfrxMemoView
+          AllowVectorExport = True
+          Left = 559.370440000000000000
+          Top = 359.055350000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          DataField = 'total_os'
+          DataSet = data_set_report_os
+          DataSetName = 'data_set_report_os'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[data_set_report_os."total_os"]')
+          ParentFont = False
+        end
+        object Shape7: TfrxShapeView
+          AllowVectorExport = True
+          Left = 506.457020000000000000
+          Top = 328.819110000000000000
+          Width = 207.874150000000000000
+          Height = 26.456710000000000000
+          Fill.BackColor = cl3DLight
+          Frame.Typ = []
+        end
+        object Memo40: TfrxMemoView
+          AllowVectorExport = True
+          Left = 510.236550000000000000
+          Top = 332.598640000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'TOTAIS')
+          ParentFont = False
+        end
+        object Memo55: TfrxMemoView
+          AllowVectorExport = True
+          Left = 517.795610000000000000
+          Top = 359.055350000000000000
+          Width = 34.015770000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'R$:')
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object data_set_report_os: TfrxDBDataset
+    UserName = 'data_set_report_os'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'ordem_servico=ordem_servico'
+      'ordem_servico_id=ordem_servico_id'
+      'servico_produto_id=servico_produto_id'
+      'user_id=user_id'
+      'cliente_id=cliente_id'
+      'titulo=titulo'
+      'descricao_servico=descricao_servico'
+      'prob_relatado=prob_relatado'
+      'prob_constatado=prob_constatado'
+      'data_disponibilidade=data_disponibilidade'
+      'imagem=imagem'
+      'data_hora=data_hora'
+      'telefone_contato=telefone_contato'
+      'codigo=codigo'
+      'serie=serie'
+      'patrimonio=patrimonio'
+      'cor=cor'
+      'modelo=modelo'
+      'marca=marca'
+      'status=status'
+      'acessorios=acessorios'
+      'situacao=situacao'
+      'observacao=observacao'
+      'total_os=total_os')
+    DataSet = sql_print_os
+    BCDToCurrency = False
+    Left = 256
+    Top = 312
+  end
+end
